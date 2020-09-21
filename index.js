@@ -1,12 +1,22 @@
 const Sentry = require("@sentry/node");
 Sentry.init({ dsn: process.env.SENTRY_DSN });
 const generated = require("@noqcks/generated");
+const mongoose = require("mongoose");
 const PR = require("./lib/pull_request");
 const Approval = require("./lib/PRApproval");
 const Config = require("./config/config");
 const Issue = require("./lib/issues");
 const selectiveFileChecker = require("./lib/selectiveModifiedFileChecker");
 const AddLabel = require("./lib/addLabels");
+
+//MongoDB Config
+const db = Config.mongoURL;
+
+//Attempt to connect to database
+mongoose
+  .connect(db, { useNewUrlParser: true, useUnifiedTopology: true })
+  .then(() => console.log("MongoDB Connected Successfully"))
+  .catch((e) => console.log(e));
 
 /**
  * This is the main event loop that runs when a revelent Pull Request
