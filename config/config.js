@@ -1,3 +1,7 @@
+const dotenv = require("dotenv");
+
+dotenv.config();
+
 const label = {
   XS: "size/XS",
   S: "size/S",
@@ -32,4 +36,5 @@ module.exports = {
   label,
   colors,
   sizes,
+  mongoURL: process.env.MONGO_DB_URI,
 };
