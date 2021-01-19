@@ -97,6 +97,15 @@ module.exports = (app) => {
         await AddLabel.addLabel(context, labelToAdd, Config.colors[labelToAdd]);
       }
 
+      if (title.includes("kubera-chaos")) {
+        await AddLabel.addLabel(
+          context,
+          "area/kubera-chaos",
+          Config.colors["area/kubera-chaos"]
+        );
+        await AddLabel.addLabel(context, labelToAdd, Config.colors[labelToAdd]);
+      }
+
       const doNotMerge = "DO NOT MERGE";
 
       if (labelToAdd === "size/XXL") {

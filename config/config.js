@@ -19,6 +19,7 @@ const colors = {
   "size/XL": "C32607",
   "size/XXL": "E50009",
   "area/litmus-portal": "ADD6FF",
+  "area/kubera-chaos": "4CBFAD",
   "DO NOT MERGE": "f47e7e",
   "READY TO MERGE": "B8FF33",
   "PR: Changes Requested": "FFFF66",
